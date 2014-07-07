@@ -33,7 +33,61 @@
     </script>
   </head>
   <body>
-    <div class="container">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" 
+            data-ng-init="menuCollapsed=true" 
+            data-ng-click="menuCollapsed=!menuCollapsed" 
+            data-toggle="collapse" 
+            data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Something Wanted PoC</a>
+        </div>
+        <div class="navbar-collapse collapse" collapse="menuCollapsed">
+          <ul class="nav navbar-nav">
+            <li ui-sref-active="active">
+              <a href ui-sref="home"><i class="fa fa-home"></i> Home</a>
+            </li>
+            <li ui-sref-active="active">
+              <a href ui-sref="about"><i class="fa fa-info-circle"></i> About</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Actions <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href ui-sref="listings.getListings">All Listings</a></li>
+                <li><a href="#">Another Action</a></li>
+                <li><a href="#">Yet Another Action</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">A Subsection</li>
+                <li><a href="#">Some Subaction</a></li>
+                <li><a href="#">Another Subaction</a></li>
+              </ul>
+            </li>
+            <li class="navbar-text">
+              <span><i class="fa fa-lg fa-envelope-o"></i></span>
+            </li>
+          </ul>
+          <div class="navbar-form navbar-right">
+            <a href ui-sref="listings.createListing"
+              class="btn btn-success">
+              Create New Listing
+            </a>
+          </div>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <!-- Default NGBP Nav -->
+    <!--<div class="container">
       <div class="navbar navbar-default">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" ng-init="menuCollapsed = true"
@@ -87,7 +141,7 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div>--> <!-- End default NGBP Nav -->
 
     <div class="container" ui-view="main"></div>
 
@@ -95,25 +149,22 @@
       <div class="container">
         <div class="footer-inner">
           <ul class="social">
-            <li><a target="_blank" href="http://gplus.to/joshdmiller"><i class="fa fa-google-plus-sign"></i></a></li>
-            <li><a target="_blank" href="http://twitter.com/joshdmiller"><i class="fa fa-twitter-sign"></i></a></li>
-            <li><a target="_blank" href="http://linkedin.com/in/joshdmiller"><i class="fa fa-linkedin-sign"></i></a></li>
-            <li><a target="_blank" href="http://github.com/ngbp/ngbp"><i class="fa fa-github-sign"></i></a></li>
+            <li><a href="#">Footer One</a></li>
+            <li><a href="#">Footer Two</a></li>
+            <li><a href="#">Footer Three</a></li>
+            <li><a href="#">Footer Four</a></li>
           </ul>
           
-
-          <p>
-            (c) 2013 <a href="http://www.joshdavidmiller.com">Josh David Miller</a>. 
-            <a href="http://github.com/ngbp/ngbp/fork_select">Fork this</a>
-            to kickstart your next project.
-            <br />
-            ngbp is based on
-            <a href="http://www.angularjs.org">AngularJS</a>,
-            <a href="http://getbootstrap.com">Bootstrap</a>, 
-            <a href="http://angular-ui.github.com/bootstrap">UI Bootstrap</a>,
-            and 
-            <a href="http://fortawesome.github.com/Font-Awesome">Font Awesome</a>.        
-          </p>
+          <div>
+            <p class="copy">&copy;<script>document.write(new Date().getFullYear());</script> B&amp;G, LLC</p>
+            <p class="footerlinks">
+              <a href="/">Home</a> |
+              <a href ui-sref="about">About</a> |
+              <a href>News</a> |
+              <a href>Contact Us</a> |
+              <a href>Privacy Policy</a>
+            </p>     
+          </div>
         </div>
       </div>
     </footer>

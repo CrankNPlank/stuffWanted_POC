@@ -1,0 +1,21 @@
+<!-- Opening div -->
+<div>
+
+  <h1 class="page-header">Create A New Wanted Listing</h1>
+
+  <form data-ng-submit="saveListing();">
+    <label for="title">Title:</label><br />
+    <input id="title" type="text" data-ng-model="listing.title" 
+      placeholder="Enter a title..." autofocus /><br /><br />
+    <label for="title">Description:</label><br />
+    <input id="description" type="text" data-ng-model="listing.content" 
+      placeholder="Enter a description..." /><br /><br />
+    <button type="submit" class="btn btn-primary btn-sm">
+      <i class="fa fa-save"></i> Create Listing
+    </button>
+    <button data-ng-click="cancel()" type="button" class="btn btn-default btn-sm">
+      <i class="fa fa-times-circle"></i> Cancel
+    </button>
+  </form>
+
+</div> <!-- End opening div -->

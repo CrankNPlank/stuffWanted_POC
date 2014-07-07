@@ -1,10 +1,6 @@
-angular.module( 'ngBoilerplate', [
-  'templates-app',
-  'templates-common',
-  'ngBoilerplate.home',
-  'ngBoilerplate.about',
-  'ui.router'
-])
+angular.module( 'ngBoilerplate', ['templates-app', 'templates-common','ui.router', 
+  'ui.bootstrap', 'placeholders', 'firebase', 'ngBoilerplate.listingsSvc', 
+  'ngBoilerplate.home','ngBoilerplate.about', 'ngBoilerplate.listings'])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
   $urlRouterProvider.otherwise( '/home' );
@@ -19,7 +15,4 @@ angular.module( 'ngBoilerplate', [
       $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
     }
   });
-})
-
-;
-
+});
